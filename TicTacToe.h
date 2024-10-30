@@ -13,7 +13,7 @@ class TicTacToe {
 
 private: 
   // TicTacToe fields 
-  char *board[9]; // a static array of type char with size 9 
+  char board[9]; // a static array of type char with size 9 
 
 public: 
   // Class Constructors & Destructors ----------------------------------------
