@@ -37,6 +37,10 @@ public:
   // Will keep asking the player for a valid number until the player gives one
   void playerMove(char player_char); 
 
+  // clearBoard()
+  // clears the status of the board back to empty 
+  void clearBoard();
+
   // Other Functions ---------------------------------------------------------
 
   // printBoard()

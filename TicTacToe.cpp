@@ -1,6 +1,6 @@
 //-----------------------------------------------------------------------------
 // TicTacToe.h 
-// Header file for TicTacToe ADT. 
+// Implementation file for TicTacToe ADT. 
 //-----------------------------------------------------------------------------
 #include <iostream> 
 #include <string> 
@@ -37,7 +37,32 @@ TicTacToe::TicTacToe() {
 // input - char (player character - 'X' or 'O') 
 // output - void (changes this TicTacToe board to update with player's move)
 // Will keep asking the player for a valid number until the player gives one
-void playerMove(char player_char); 
+void TicTacToe::playerMove(char player_char) {
+  int number;
+  do {
+    cout << "Player " << player_char << " please enter a valid spot to place a marker (1-9, currently empty): "; 
+    cin >> number; 
+    number--; // since it's zero index 
+    if (board[number] == ' ') {
+      board[number] = player_char; 
+      break; 
+    } 
+  } while (!(number > 0) || !(number < 8)); 
+} 
+
+// clearBoard()
+// clears the status of the board back to empty 
+void TicTacToe::clearBoard() {
+  board[0] = ' ';
+  board[1] = ' '; 
+  board[2] = ' '; 
+  board[3] = ' '; 
+  board[4] = ' '; 
+  board[5] = ' ';
+  board[6] = ' '; 
+  board[7] = ' '; 
+  board[8] = ' ';
+}
 
 // Other Functions ---------------------------------------------------------
 
